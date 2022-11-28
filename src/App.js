@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Main from './Main';
+import Main from './components/Main';
 import { Link } from 'react-router-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NotFound from './NotFound';
-
+import NotFound from './components/NotFound';
 function App() {
     return (
         <div className="App">

@@ -1,4 +1,4 @@
-import style from './styles/style.css';
+import style from '../styles/style.css';
 
 const Main = () => {
     return (
