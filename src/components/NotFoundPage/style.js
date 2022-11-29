@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 // import notFoundIMG from '../../imgs/notFoundIMG.png';
-import img404 from '../../imgs/img404.png';
 
 export const view_textContainer = styled.div`
     height: 100vh;
@@ -17,9 +16,7 @@ export const view_notFound = styled.h1`
     margin: 0;
 `;
 
-export const view_picture = styled.img.attrs({
-    src: `${img404}`,
-})`
+export const view_picture = styled.img`
     width: 700px;
     height: 700px;
     opacity: 80%;
@@ -29,4 +26,16 @@ export const Style = {
     textContainer: view_textContainer,
     picture: view_picture,
     notFound: view_notFound,
+};
+
+export let myStorage = {
+    car: {
+        inside: {
+            'glove box': 'maps',
+            seat: 'crumbs',
+        },
+        outside: {
+            trunk: 'jack',
+        },
+    },
 };
