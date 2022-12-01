@@ -23,19 +23,7 @@ export const view_picture = styled.img`
 `;
 
 export const Style = {
-    textContainer: view_textContainer,
-    picture: view_picture,
-    notFound: view_notFound,
-};
-
-export let myStorage = {
-    car: {
-        inside: {
-            'glove box': 'maps',
-            seat: 'crumbs',
-        },
-        outside: {
-            trunk: 'jack',
-        },
-    },
+    textContainer: { view_textContainer },
+    picture: { view_picture },
+    notFound: { view_notFound },
 };
