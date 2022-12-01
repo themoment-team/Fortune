@@ -4,24 +4,24 @@ import React from 'react';
 import * as S from './style';
 import { Style, myStorage } from './style';
 import img404 from '../../imgs/img404.png';
-const StextContainer = Style['textContainer'];
-const SnotFound = Style['notFound'];
-const Spicture = Style['picture'];
+const View_TextContainer = Style['TextContainer'];
+const View_NotFound = Style['NotFound'];
+const View_Picture = Style['Picture'];
 
 // import {myS}
 
 const NotFound = () => {
     return (
-        // <StextContainer>
-        //     <SnotFound>404 Not</SnotFound>
-        //     <SnotFound>Found</SnotFound>
-        //     <Spicture src={img404} />
-        // </StextContainer>
-        <S.view_textContainer>
-            <S.view_notFound>404 Not</S.view_notFound>
-            <S.view_notFound>Found</S.view_notFound>
-            <S.view_picture src={img404} />
-        </S.view_textContainer>
+        // <View_TextContainer>
+        //     <View_NotFound>404 Not</View_NotFound>
+        //     <View_NotFound>Found</View_NotFound>
+        //     <View_Picture src={img404} />
+        // </View_TextContainer>
+        <S.View_TextContainer>
+            <S.View_NotFound>404 Not</S.View_NotFound>
+            <S.View_NotFound>Found</S.View_NotFound>
+            <S.View_Picture src={img404} />
+        </S.View_TextContainer>
     );
 };
 

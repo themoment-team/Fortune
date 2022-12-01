@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 // import notFoundIMG from '../../imgs/notFoundIMG.png';
 
-export const view_textContainer = styled.div`
+export const View_TextContainer = styled.div`
     height: 100vh;
     display: flex;
     align-items: center;
@@ -9,21 +9,21 @@ export const view_textContainer = styled.div`
     flex-direction: column;
 `;
 
-export const view_notFound = styled.h1`
+export const View_NotFound = styled.h1`
     font-size: 700%;
     color: #8f85ff;
     font-weight: bold;
     margin: 0;
 `;
 
-export const view_picture = styled.img`
+export const View_Picture = styled.img`
     width: 700px;
     height: 700px;
     opacity: 80%;
 `;
 
 export const Style = {
-    textContainer: { view_textContainer },
-    picture: { view_picture },
-    notFound: { view_notFound },
+    TextContainer: View_TextContainer,
+    Picture: View_Picture,
+    NotFound: View_NotFound,
 };
