@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import global from '../../global.css';
 
 export const ViewTextContainer = styled.div`
     height: 100vh;
@@ -27,6 +28,7 @@ export const ViewNotFound = styled.h1`
     color: #8f85ff;
     font-weight: bold;
     margin: 0;
+    font-family: 'MaplestoryOTFBold';
     @media screen and (min-width: 800px) {
     }
     text-shadow: 5px 5px 5px rgba(17, 17, 17, 0.158);
