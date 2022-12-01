@@ -28,11 +28,12 @@ export const ViewNotFound = styled.h1`
     font-weight: bold;
     margin: 0;
     font-family: 'MaplestoryOTFBold';
-    @media screen and (min-width: 800px) {
+    @media screen and (max-width: 800px) {
+        font-size: 14vw;
     }
     text-shadow: 5px 5px 5px rgba(17, 17, 17, 0.158);
     @media screen and (max-width: 700px) {
-        font-size: 20vw;
+        font-size: 16vw;
     }
 `;
 
@@ -42,7 +43,13 @@ export const ViewPicture = styled.img`
     @media screen and (min-width: 800px) {
         width: 500px;
     }
+    @media screen and (max-width: 800px) {
+        width: 500px;
+    }
     @media screen and (max-width: 700px) {
-        width: 100vw;
+        width: 80vw;
+        @media screen and (max-height: 799px) {
+            width: 80vw;
+        }
     }
 `;
