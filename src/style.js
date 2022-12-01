@@ -14,4 +14,8 @@ export const View = styled.div`
     height: 100vh;
     background-color: #f2f3f7;
     box-shadow: 0px 0px 23px -15px rgb(0, 0, 0);
+    @media screen and (max-width: 720px) {
+        width: 100vw;
+        height: 100vh;
+    }
 `;

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import global from '../../global.css';
 
 export const ViewTextContainer = styled.div`
     height: 100vh;
@@ -32,6 +31,9 @@ export const ViewNotFound = styled.h1`
     @media screen and (min-width: 800px) {
     }
     text-shadow: 5px 5px 5px rgba(17, 17, 17, 0.158);
+    @media screen and (max-width: 700px) {
+        font-size: 20vw;
+    }
 `;
 
 export const ViewPicture = styled.img`
@@ -39,5 +41,8 @@ export const ViewPicture = styled.img`
     opacity: 80%;
     @media screen and (min-width: 800px) {
         width: 500px;
+    }
+    @media screen and (max-width: 700px) {
+        width: 100vw;
     }
 `;
