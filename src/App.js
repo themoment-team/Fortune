@@ -10,8 +10,8 @@ import * as S from './style';
 function App() {
     return (
         <div className="App">
-            <S.body>
-                <S.view>
+            <S.Body>
+                <S.View>
                     <BrowserRouter>
                         <Routes>
                             <Route path="/" element={<Main />}></Route>
@@ -23,8 +23,8 @@ function App() {
                             <Route path="*" element={<NotFound />}></Route>
                         </Routes>
                     </BrowserRouter>
-                </S.view>
-            </S.body>
+                </S.View>
+            </S.Body>
         </div>
     );
 }
