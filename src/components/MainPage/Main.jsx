@@ -1,17 +1,14 @@
-import * as S from "./style";
+import Box, * as S from "./style";
 
 const Main = () => {
 	return (
 		<div>
-			<div className="container">
-				<div className="container-title">
-					<S.text>Fortune</S.text>
-				</div>
-				<div className="container-buttons">
-					<S.button>운세보기</S.button>
-					<S.button>궁합보기</S.button>
-				</div>
-			</div>
+			<S.Container>
+				<S.ContainerTitle>
+					<S.ContainerText>Fortune</S.ContainerText>
+				</S.ContainerTitle>
+				<Box></Box>
+			</S.Container>
 		</div>
 	);
 };
