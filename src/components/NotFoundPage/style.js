@@ -33,7 +33,7 @@ export const ViewNotFound = styled.h1`
     }
     text-shadow: 5px 5px 5px rgba(17, 17, 17, 0.158);
     @media screen and (max-width: 700px) {
-        font-size: 16vw;
+        font-size: 13vw;
     }
 `;
 
