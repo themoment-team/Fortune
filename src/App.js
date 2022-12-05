@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Main from './components/MainPage/Main';
 import { Link } from 'react-router-dom';
+import Loading from './components/LoadingPage/Loading';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NotFound from './components/NotFoundPage/NotFound';
 import Fortune from './components/FortunePage/Fortune';
@@ -21,11 +22,12 @@ function App() {
                             ></Route>
                             <Route path="/match" element={<Match />}></Route>
                             <Route path="*" element={<NotFound />}></Route>
+                            <Route path="/loading" element={<Loading />}></Route>
                         </Routes>
                     </BrowserRouter>
                 </S.View>
             </S.Body>
-        </div>
+        </div >
     );
 }
 

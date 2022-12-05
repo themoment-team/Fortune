@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import React, { useState } from 'react';
-import { getSuggestedQuery } from '@testing-library/react';
+import React from 'react';
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
