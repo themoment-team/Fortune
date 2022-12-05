@@ -2,6 +2,8 @@ import * as S from "./style";
 import fortune from "../../imgs/fortune.png";
 import { useState } from "react";
 const Fortune = () => {
+  const [isClick, setIsClick] = useState(false);
+
   return (
     <div>
       <S.Container>
