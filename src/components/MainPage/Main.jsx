@@ -1,5 +1,4 @@
 import Box, * as S from "./style";
-
 const Main = () => {
 	return (
 		<div>
