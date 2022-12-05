@@ -1,11 +1,19 @@
-import * as S from './style';
-
+import * as S from "./style";
+import fortune from "../../imgs/fortune.png";
+import { useState } from "react";
 const Fortune = () => {
-    return (
-        <div>
-            <S.text>운세 페이지 입니다</S.text>
-        </div>
-    );
+  const [isClick, setIsClick] = useState(false);
+
+  return (
+    <div>
+      <S.Container>
+        <S.ClickFortuneImg src={fortune} />
+        <S.ClcikInsteadFortuneImg>
+          <S.ClickText>touch!</S.ClickText>
+        </S.ClcikInsteadFortuneImg>
+      </S.Container>
+    </div>
+  );
 };
 
 export default Fortune;

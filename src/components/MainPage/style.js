@@ -1,3 +1,4 @@
+
 import styled from 'styled-components';
 import React from 'react';
 import { Link } from "react-router-dom";
@@ -19,17 +20,15 @@ export const ContainerText = styled.div`
     }
     `;
 
-export const ContainerTitle = styled.div`
-`;
-
+export const ContainerTitle = styled.div``;
 
 export const ContainerButtonBox = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
-    height: 50vh;
-    width: 25vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 50vh;
+  width: 25vw;
 `;
 
 export const ContainerButton = styled.button`
@@ -51,6 +50,7 @@ export const ContainerButton = styled.button`
 
 
 export const Box = () => {
+
     const changeColor = (e) => {
         console.log("It's working!!");
         e.target.style.color = 'grey'
@@ -68,3 +68,4 @@ export const Box = () => {
     );
 }
 export default Box;
+
