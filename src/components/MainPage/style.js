@@ -50,21 +50,8 @@ export const ContainerButton = styled.button`
 
 
 
-export const Box = () => {
-    const changeColor = (e) => {
-        console.log("It's working!!");
-        e.target.style.color = 'grey'
-        console.log(e.target);
-    };
-    return (
-        <ContainerButtonBox>
-            <Link to="/Fortune">
-                <ContainerButton onClick={(e) => { changeColor(e) }}>운세뽑기</ContainerButton>
-            </Link>
-            <Link to="/Match">
-                <ContainerButton onClick={(e) => { changeColor(e) }}  >궁합보기</ContainerButton>
-            </Link>
-        </ContainerButtonBox >
-    );
-}
-export default Box;
+export const ChangeColor = (e) => {
+    console.log("It's working!!");
+    e.target.style.color = 'grey'
+    console.log(e.target);
+};
