@@ -15,13 +15,51 @@ export const VioletText = styled.h1`
     top: 15vh;
     font-family: 'MaplestoryOTFBold';
     font-size: 55px;
+    margin: 0;
     color: #8f85ff;
     @media screen and (max-width: 700px) {
         font-size: 7.3vw;
     }
 `;
 
-export const NameContainer = styled.div`
+export const RelativeText = styled.h1`
+    position: relative;
+    font-family: 'MaplestoryOTFBold';
+    font-size: 75px;
+    color: #8f85ff;
+    margin: 0;
+    top: 280px;
+    @media screen and (max-width: 700px) {
+        top: 38vw;
+        font-size: 8.3vw;
+    }
+    @media screen and (max-height: 770px) {
+        font-size: 7.3vw;
+    }
+    @media screen and (max-height: 600px) {
+        top: 15vw;
+        font-size: 4.3vw;
+    }
+`;
+
+export const HeartDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
+export const ViewPicture = styled.img`
+    width: 700px;
+    opacity: 80%;
+    @media screen and (max-width: 700px) {
+        width: 100vw;
+    }
+    @media screen and (max-height: 600px) {
+        height: 30vw;
+        width: 30vw;
+    }
+`;
+
+export const ButtonBox = styled.div`
     width: 700px;
     justify-content: space-evenly;
     display: flex;
@@ -29,42 +67,6 @@ export const NameContainer = styled.div`
     @media screen and (max-width: 700px) {
         flex-direction: column;
         width: 50vw;
-    }
-`;
-
-export const NameInput = styled.input`
-    outline: none;
-    width: 270px;
-    height: 100px;
-    border: 0;
-    border-bottom: solid 2px ${(props) => props.color || 'white'};
-    display: flex;
-    text-align: center;
-    font-size: 40px;
-    font-family: 'MaplestoryOTFBold';
-    @media screen and (max-width: 700px) {
-        margin-bottom: 3vh;
-        height: 15vw;
-        font-size: 7vw;
-        width: 60vw;
-    }
-    &:focus {
-        border-bottom: solid 2px #8f85ff;
-        transition: ease-in-out 0.2s;
-    }
-    &:focus::placeholder {
-        color: transparent;
-    }
-`;
-
-export const ErrMessege = styled.p`
-    position: absolute;
-    text-align: left;
-    color: #ff0000;
-    margin: 0;
-    @media screen and (max-width: 700px) {
-        position: relative;
-        bottom: 3vh;
     }
 `;
 
@@ -87,6 +89,11 @@ export const TextContainer = styled.div`
         width: 50vw;
         font-size: 7vw;
         height: 15vw;
+        margin-bottom: 3vh;
+    }
+    @media screen and (max-height: 770px) {
+        width: 30vw;
+        height: 10vw;
     }
     &:hover {
         color: #8f85ff;
