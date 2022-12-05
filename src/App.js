@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NotFound from './components/NotFoundPage/NotFound';
 import Fortune from './components/FortunePage/Fortune';
 import Match from './components/MatchPage/Match';
+import MatchResult from './components/MatchResultPage/MatchResult';
 import * as S from './style';
 
 function App() {
@@ -21,6 +22,10 @@ function App() {
                                 element={<Fortune />}
                             ></Route>
                             <Route path="/match" element={<Match />}></Route>
+                            <Route
+                                path="/match/result"
+                                element={<MatchResult />}
+                            ></Route>
                             <Route path="*" element={<NotFound />}></Route>
                             <Route path="/loading" element={<Loading />}></Route>
                         </Routes>
