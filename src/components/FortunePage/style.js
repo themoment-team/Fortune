@@ -1,19 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  position: absolute;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  @media screen and (max-width: 800px) {
-  }
 `;
 
 export const ClickFortuneImg = styled.img`
   width: 600px;
   height: 600px;
-  position: relative;
+  position: absolute;
   @media screen and (max-width: 720px) {
     width: 80vw;
     height: 80vw;
@@ -26,10 +25,9 @@ export const ClcikInsteadFortuneImg = styled.div`
   position: absolute;
   cursor: pointer;
   @media screen and (max-width: 720px) {
-    width:40vw;
-    height:40vw;  
-    
-  },
+    width: 40vw;
+    height: 40vw;
+  } ;
 `;
 
 export const ClickText = styled.p`
