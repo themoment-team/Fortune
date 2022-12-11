@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
-import Main from './components/MainPage/Main';
-import { Link } from 'react-router-dom';
-import Loading from './components/LoadingPage/Loading';
+import React, { Component, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NotFound from './components/NotFoundPage/NotFound';
-import Fortune from './components/FortunePage/Fortune';
-import Match from './components/MatchPage/Match';
-import MatchResult from './components/MatchResultPage/MatchResult';
+import {
+    Loading,
+    NotFound,
+    Fortune,
+    Match,
+    MatchResult,
+    Main,
+} from './components';
 import * as S from './style';
 
 function App() {
@@ -27,12 +28,15 @@ function App() {
                                 element={<MatchResult />}
                             ></Route>
                             <Route path="*" element={<NotFound />}></Route>
-                            <Route path="/loading" element={<Loading />}></Route>
+                            <Route
+                                path="/loading"
+                                element={<Loading />}
+                            ></Route>
                         </Routes>
                     </BrowserRouter>
                 </S.View>
             </S.Body>
-        </div >
+        </div>
     );
 }
 
