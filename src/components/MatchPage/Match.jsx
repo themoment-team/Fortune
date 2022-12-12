@@ -40,23 +40,52 @@ const Match = () => {
         }
     };
 
+    // const beforeLocation = (e) => {
+    //     if (
+    //         names[0] != null &&
+    //         names[1] != null &&
+    //         !isErr1 &&
+    //         !isErr2 &&
+    //         names[2].length === 3 &&
+    //         names[3].length === 3
+    //     ) {
+    //         setIsClicked(true);
+    //     } else {
+    //         e.preventDefault();
+    //         if (names[0] == null || names[2].length !== 3) {
+    //             setIsErr1(true);
+    //         }
+    //         if (names[1] == null || names[3].length !== 3) {
+    //             setIsErr2(true);
+    //         }
+    //     }
+    // };
     const beforeLocation = (e) => {
-        if (
-            names[0] != null &&
-            names[1] != null &&
-            !isErr1 &&
-            !isErr2 &&
-            names[2].length === 3 &&
-            names[3].length === 3
-        ) {
+        let whatErr = 0;
+        if (names[0] == null || names[2].length !== 3) {
+            setIsErr1(true);
+            whatErr = 1;
+        } else setIsErr1(false);
+        if (names[1] == null || names[3].length !== 3) {
+            setIsErr2(true);
+            whatErr === 1 ? (whatErr = 3) : (whatErr = 2);
+        } else setIsErr2(false);
+        if (!isErr1 && !isErr2) {
             setIsClicked(true);
-        } else {
+        } else if (isErr1 || isErr2) {
             e.preventDefault();
-            if (names[0] == null || names[2].length !== 3) {
-                setIsErr1(true);
-            }
-            if (names[1] == null || names[3].length !== 3) {
-                setIsErr2(true);
+            // eslint-disable-next-line default-case
+            switch (whatErr) {
+                case 1:
+                    setIsErr1(true);
+                    break;
+                case 2:
+                    setIsErr2(true);
+                    break;
+                case 3:
+                    setIsErr1(true);
+                    setIsErr2(true);
+                    break;
             }
         }
     };
