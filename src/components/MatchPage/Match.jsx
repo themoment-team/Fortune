@@ -14,6 +14,7 @@ const Match = ({ history }) => {
     let names = []; // 이름을 분리하고 짜내서 MatchResult로 보내고 검사하기 위한 변수
     let isOnErr = false; // 엔터 한정 오류 발생 확인 변수
     const navigate = useNavigate(); // 페이지 이동
+    const FIRSTNAME = 'firstName';
 
     const checkName = (e) => {
         // 사용자가 입력한 이름을 오류 체크하는 함수
@@ -23,7 +24,7 @@ const Match = ({ history }) => {
 
         if (isChecked) {
             // 온전한 한글일때
-            if (target.classList[2] === 'firstName') {
+            if (target.classList[2] === FIRSTNAME) {
                 // 첫 번째 이름이 한글일 경우
                 setIsErr1(false);
                 // eslint-disable-next-line no-undef
@@ -38,7 +39,7 @@ const Match = ({ history }) => {
             }
         } else {
             // 온전한 한글이 아닐때
-            if (target.classList[2] === 'firstName') {
+            if (target.classList[2] === FIRSTNAME) {
                 // 첫 번재 이름이 한글이 아닐때
                 setIsErr1(true);
             } else if (target.classList[2] === 'secondName') {
