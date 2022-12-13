@@ -8,6 +8,9 @@ export const Container = styled.div`
     text-align: center;
     justify-content: space-evenly;
     flex-direction: column;
+    @media screen and (max-width: 720px) {
+        width: 100vw;
+    }
 `;
 
 export const VioletText = styled.h1`

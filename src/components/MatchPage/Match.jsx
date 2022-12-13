@@ -1,18 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import * as S from './style';
-import * as hangul from 'hangul-js';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Loading from '../LoadingPage/Loading';
 
 const regexr = /^[ㄱ-ㅎ|가-힣]+$/;
 
-const Match = () => {
+const Match = ({ history }) => {
     const [isErr1, setIsErr1] = useState(false);
     const [isErr2, setIsErr2] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
     const errMessege1 = '에러메세지';
     const errMessege2 = '에러메세지';
     let names = [];
+    let isOnErr = false;
+    const navigate = useNavigate();
 
     const checkName = (e) => {
         const target = e.target;
@@ -40,53 +41,48 @@ const Match = () => {
         }
     };
 
-    // const beforeLocation = (e) => {
-    //     if (
-    //         names[0] != null &&
-    //         names[1] != null &&
-    //         !isErr1 &&
-    //         !isErr2 &&
-    //         names[2].length === 3 &&
-    //         names[3].length === 3
-    //     ) {
-    //         setIsClicked(true);
-    //     } else {
-    //         e.preventDefault();
-    //         if (names[0] == null || names[2].length !== 3) {
-    //             setIsErr1(true);
-    //         }
-    //         if (names[1] == null || names[3].length !== 3) {
-    //             setIsErr2(true);
-    //         }
-    //     }
-    // };
     const beforeLocation = (e) => {
-        let whatErr = 0;
-        if (names[0] == null || names[2].length !== 3) {
-            setIsErr1(true);
-            whatErr = 1;
-        } else setIsErr1(false);
-        if (names[1] == null || names[3].length !== 3) {
-            setIsErr2(true);
-            whatErr === 1 ? (whatErr = 3) : (whatErr = 2);
-        } else setIsErr2(false);
-        if (!isErr1 && !isErr2) {
+        if (
+            names[0] != null &&
+            names[1] != null &&
+            !isErr1 &&
+            !isErr2 &&
+            names[2].length === 3 &&
+            names[3].length === 3
+        ) {
             setIsClicked(true);
-        } else if (isErr1 || isErr2) {
-            e.preventDefault();
-            // eslint-disable-next-line default-case
-            switch (whatErr) {
-                case 1:
-                    setIsErr1(true);
-                    break;
-                case 2:
-                    setIsErr2(true);
-                    break;
-                case 3:
-                    setIsErr1(true);
-                    setIsErr2(true);
-                    break;
+        } else {
+            try {
+                e.preventDefault();
+            } catch {
+                isOnErr = true;
             }
+            console.log(names[0][2]);
+            if (
+                names[0][2] === undefined ||
+                names[0][1] === undefined ||
+                names[2].length !== 3
+            ) {
+                setIsErr1(true);
+            }
+            if (
+                names[1][2] === undefined ||
+                names[1][1] === undefined ||
+                names[3].length !== 3
+            ) {
+                setIsErr2(true);
+            }
+        }
+    };
+
+    const onEnter = () => {
+        beforeLocation();
+        if (!isOnErr) {
+            navigate('/match/result', {
+                state: {
+                    names: names,
+                },
+            });
         }
     };
 
@@ -95,7 +91,11 @@ const Match = () => {
             {isClicked ? <Loading></Loading> : null}
             <S.Container>
                 <S.VioletText>두 분의 이름을 입력해주세요</S.VioletText>
-                <S.NameContainer>
+                <S.NameContainer
+                    onKeyPress={(e) => {
+                        if (e.key === 'Enter') onEnter();
+                    }}
+                >
                     <div>
                         <S.NameInput
                             maxLength={3}

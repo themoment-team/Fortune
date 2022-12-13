@@ -24,7 +24,7 @@ export const VioletText = styled.h1`
     }
 `;
 
-export const NameContainer = styled.div`
+export const NameContainer = styled.form`
     width: 700px;
     justify-content: space-evenly;
     display: flex;
@@ -86,7 +86,7 @@ export const TextContainer = styled.div`
     box-shadow: 15px 15px 15px rgba(17, 17, 17, 0.158);
     transition: ease-in-out 0.2s;
     cursor: pointer;
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 720px) {
         width: 50vw;
         font-size: 7vw;
         height: 15vw;
