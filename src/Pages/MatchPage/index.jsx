@@ -110,7 +110,7 @@ const Match = ({ history }) => {
 
     return (
         <div>
-            {isClicked ? <Loading></Loading> : null}
+            {isClicked && <Loading></Loading>}
             <S.Container>
                 <S.VioletText>두 분의 이름을 입력해주세요</S.VioletText>
                 <S.NameContainer
