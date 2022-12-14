@@ -16,6 +16,9 @@ const Match = ({ history }) => {
     const navigate = useNavigate(); // 페이지 이동
     const FIRSTNAME = 'firstName';
 
+    let userName1 = [];
+    let userName2 = [];
+
     const checkName = (e) => {
         // 사용자가 입력한 이름을 오류 체크하는 함수
         const target = e.target;
@@ -28,14 +31,14 @@ const Match = ({ history }) => {
                 // 첫 번째 이름이 한글일 경우
                 setIsErr1(false);
                 // eslint-disable-next-line no-undef
-                names[0] = Hangul.disassemble(target.value, true); // 한글 모음 자음마다 분리
-                names[2] = target.value; // 온전한 이름 저장
+                userName1[0] = Hangul.disassemble(target.value, true); // 한글 모음 자음마다 분리
+                userName1[1] = target.value; // 온전한 이름 저장
             } else {
                 // 두 번째 이름이 한글일 경우
                 setIsErr2(false);
                 // eslint-disable-next-line no-undef
-                names[1] = Hangul.disassemble(target.value, true); // 한글 모음 자음마다 분리
-                names[3] = target.value; // 온전한 이름 저장
+                userName2[0] = Hangul.disassemble(target.value, true); // 한글 모음 자음마다 분리
+                userName2[1] = target.value; // 온전한 이름 저장
             }
         } else {
             // 온전한 한글이 아닐때
@@ -53,13 +56,17 @@ const Match = ({ history }) => {
         //submit
         if (
             // 예외처리
-            names[0] != null &&
-            names[1] != null &&
+            userName1[0] !== undefined &&
+            userName2[0] !== undefined &&
             !isErr1 &&
             !isErr2 &&
-            names[2].length === 3 &&
-            names[3].length === 3
+            userName1[1].length === 3 &&
+            userName2[1].length === 3
         ) {
+            names[0] = userName1[0];
+            names[1] = userName2[0];
+            names[2] = userName1[1];
+            names[3] = userName2[1];
             setIsClicked(true); // 예외처리가 되면 로딩 컴포넌트 띄우기
         } else {
             try {
@@ -70,17 +77,17 @@ const Match = ({ history }) => {
             }
             if (
                 // 첫 번째 이름에서 오류가 났을 경우
-                names[0][2] === undefined ||
-                names[0][1] === undefined ||
-                names[2].length !== 3
+                userName1[0]?.length === undefined ||
+                userName1[1]?.length === undefined ||
+                userName1[1].length !== 3
             ) {
                 setIsErr1(true);
             }
             if (
                 // 두 번째 이름에서 오류가 났을 경우
-                names[1][2] === undefined ||
-                names[1][1] === undefined ||
-                names[3].length !== 3
+                userName2[0]?.length === undefined ||
+                userName2[1]?.length === undefined ||
+                userName2[1].length !== 3
             ) {
                 setIsErr2(true);
             }
