@@ -60,7 +60,7 @@ export const NameInput = styled.input`
     }
 `;
 
-export const ErrMessege = styled.p`
+export const ErrMessage = styled.p`
     position: absolute;
     text-align: left;
     color: #ff0000;

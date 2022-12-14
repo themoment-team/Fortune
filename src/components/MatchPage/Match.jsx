@@ -9,8 +9,8 @@ const Match = ({ history }) => {
     const [isErr1, setIsErr1] = useState(false); // 에러를 나타내는 변수
     const [isErr2, setIsErr2] = useState(false); // 에러를 나타내는 변수
     const [isClicked, setIsClicked] = useState(false); // 클릭을 확인하고 로딩 컴포넌트를 띄우는 변수
-    const errMessege1 = '에러메세지'; // 에러메세지를 상황에 맞게 나타내기 위한 변수
-    const errMessege2 = '에러메세지'; // 에러메세지를 상황에 맞게 나타내기 위한 변수
+    const errMessage1 = '에러메세지'; // 에러메세지를 상황에 맞게 나타내기 위한 변수
+    const errMessage2 = '에러메세지'; // 에러메세지를 상황에 맞게 나타내기 위한 변수
     let names = []; // 이름을 분리하고 짜내서 MatchResult로 보내고 검사하기 위한 변수
     let isOnErr = false; // 엔터 한정 오류 발생 확인 변수
     const navigate = useNavigate(); // 페이지 이동
@@ -127,7 +127,7 @@ const Match = ({ history }) => {
                             className="firstName"
                             type="text"
                         ></S.NameInput>
-                        <S.ErrMessege>{isErr1 ? errMessege1 : ''}</S.ErrMessege>
+                        <S.ErrMessage>{isErr1 ? errMessage1 : ''}</S.ErrMessage>
                     </div>
                     <div>
                         <S.NameInput
@@ -138,7 +138,7 @@ const Match = ({ history }) => {
                             className="secondName"
                             type="text"
                         ></S.NameInput>
-                        <S.ErrMessege>{isErr2 ? errMessege2 : ''}</S.ErrMessege>
+                        <S.ErrMessage>{isErr2 ? errMessage2 : ''}</S.ErrMessage>
                     </div>
                 </S.NameContainer>
                 <Link
