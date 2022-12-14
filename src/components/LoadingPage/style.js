@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Spinner from '../../imgs/Spinner.gif';
 
 export const Container = styled.div`
     z-index: 1000000000;
@@ -25,15 +24,3 @@ export const Img2 = styled.img`
         width: 10%;
     }
 `;
-
-export const Items = () => {
-    return (
-        <div>
-            <Container>
-                <Img2 src={Spinner}></Img2>
-            </Container>
-        </div>
-    );
-};
-
-export default Items;
