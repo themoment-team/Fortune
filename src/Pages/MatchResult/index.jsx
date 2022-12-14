@@ -3,7 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import heart from '../../imgs/heart.png';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import MatchLoading from '../MatchLoading/MatchLoading';
+import MatchLoading from '../MatchLoading';
 import { counting } from './hangul';
 
 const MatchResult = () => {

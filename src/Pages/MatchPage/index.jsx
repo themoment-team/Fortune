@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as S from './style';
 import { Link, useNavigate } from 'react-router-dom';
-import Loading from '../LoadingPage/Loading';
+import Loading from '../LoadingPage';
 
 const regexr = /^[ㄱ-ㅎ|가-힣]+$/; // 한글인지 체크
 

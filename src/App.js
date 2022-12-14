@@ -1,13 +1,6 @@
 import React, { Component, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import {
-    Loading,
-    NotFound,
-    Fortune,
-    Match,
-    MatchResult,
-    Main,
-} from './components';
+import { Loading, NotFound, Fortune, Match, MatchResult, Main } from './Pages';
 import * as S from './style';
 
 function App() {
