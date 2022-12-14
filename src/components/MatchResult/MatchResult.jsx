@@ -17,17 +17,8 @@ const MatchResult = () => {
 
     const [result, setResult] = useState('100'); // 궁합 결과 설정
 
-    const getMatch = (name1, name2) => {
+    const getMatch = (userNames) => {
         // 궁합을 보는 로직이 있는 함수
-        let matchResult1 = [
-            // 이름 정렬을 해준다
-            name1[0],
-            name2[0],
-            name1[1],
-            name2[1],
-            name1[2],
-            name2[2],
-        ];
         let matchResult2 = []; // 반복문을 돌면서 결과가 나오는 과정에 필요한 공간
         let final; // 최종 결과
         for (let i = 0; i < 4; i++) {
@@ -36,17 +27,15 @@ const MatchResult = () => {
                 // 2회 반복될 때마다 저장 공간 교체
                 for (let j = 0; j < 5 - i; j++) {
                     // 점차 반복 횟수가 줄어들게(아래로 뾰족한 삼각형처럼)
-                    matchResult2[j] =
-                        (matchResult1[j] + matchResult1[j + 1]) % 10; // j인덱스에 있는 획수와 그 다음 인덱스에 있는 획수를 더해서 10으로 나눈 나머지를 구함
+                    matchResult2[j] = (userNames[j] + userNames[j + 1]) % 10; // j인덱스에 있는 획수와 그 다음 인덱스에 있는 획수를 더해서 10으로 나눈 나머지를 구함
                 }
             else
                 for (let j = 0; j < 5 - i; j++) {
                     // 점차 반복 횟수가 줄어들게(아래로 뾰족한 삼각형처럼)
-                    matchResult1[j] =
-                        (matchResult2[j] + matchResult2[j + 1]) % 10; // j인덱스에 있는 획수와 그 다음 인덱스에 있는 획수를 더해서 10으로 나눈 나머지를 구함
+                    userNames[j] = (matchResult2[j] + matchResult2[j + 1]) % 10; // j인덱스에 있는 획수와 그 다음 인덱스에 있는 획수를 더해서 10으로 나눈 나머지를 구함
                 }
         }
-        final = `${matchResult1[0]}${matchResult1[1]}`; // 문자열로 변환해서 저장
+        final = `${userNames[0]}${userNames[1]}`; // 문자열로 변환해서 저장
         return final;
     };
 
@@ -55,7 +44,15 @@ const MatchResult = () => {
 
         name1 = counting(name1); // 각 획수를 센다
         name2 = counting(name2); // 각 획수를 센다
-        setResult(getMatch(name1, name2)); // 결과를 구한다
+        const userNames = [
+            name1[0],
+            name2[0],
+            name1[1],
+            name2[1],
+            name1[2],
+            name2[2],
+        ];
+        setResult(getMatch(userNames)); // 결과를 구한다
     }, []);
 
     return (
