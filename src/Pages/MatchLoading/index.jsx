@@ -1,4 +1,4 @@
-import Loading from '../LoadingPage';
+import Loading from '../../components/Loading';
 import * as S from './style';
 
 const MatchLoading = () => {

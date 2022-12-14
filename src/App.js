@@ -1,7 +1,8 @@
 import React, { Component, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Loading, NotFound, Fortune, Match, MatchResult, Main } from './Pages';
+import * as P from './Pages';
 import * as S from './style';
+import * as C from './components';
 
 function App() {
     return (
@@ -10,20 +11,20 @@ function App() {
                 <S.View>
                     <BrowserRouter>
                         <Routes>
-                            <Route path="/" element={<Main />}></Route>
+                            <Route path="/" element={<P.Main />}></Route>
                             <Route
                                 path="/fortune"
-                                element={<Fortune />}
+                                element={<P.Fortune />}
                             ></Route>
-                            <Route path="/match" element={<Match />}></Route>
+                            <Route path="/match" element={<P.Match />}></Route>
                             <Route
                                 path="/match/result"
-                                element={<MatchResult />}
+                                element={<P.MatchResult />}
                             ></Route>
-                            <Route path="*" element={<NotFound />}></Route>
+                            <Route path="*" element={<P.NotFound />}></Route>
                             <Route
                                 path="/loading"
-                                element={<Loading />}
+                                element={<C.Loading />}
                             ></Route>
                         </Routes>
                     </BrowserRouter>
