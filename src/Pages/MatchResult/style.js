@@ -16,7 +16,6 @@ export const Container = styled.div`
 export const VioletText = styled.h1`
     position: relative;
     top: 15vh;
-    font-family: 'MaplestoryOTFBold';
     font-size: 55px;
     margin: 0;
     color: #8f85ff;
@@ -27,7 +26,6 @@ export const VioletText = styled.h1`
 
 export const RelativeText = styled.h1`
     position: relative;
-    font-family: 'MaplestoryOTFBold';
     font-size: 75px;
     color: #8f85ff;
     margin: 0;
@@ -82,7 +80,6 @@ export const TextContainer = styled.div`
     justify-content: center;
     font-size: 50px;
     color: #969696;
-    font-family: 'MaplestoryOTFBold';
     height: 100px;
     background: linear-gradient(to right, #e8ebf2, #f1f3f7);
     box-shadow: 15px 15px 15px rgba(17, 17, 17, 0.158);

@@ -33,7 +33,6 @@ export const ClcikInsteadFortuneImg = styled.div`
 
 export const ClickText = styled.p`
     text-align: center;
-    font-family: 'MaplestoryOTFBold';
     position: relative;
     font-weight: 900;
     top: 10%;
