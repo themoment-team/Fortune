@@ -39,7 +39,7 @@ export const NameInput = styled.input`
     width: 270px;
     height: 100px;
     border: 0;
-    border-bottom: solid 2px ${(props) => props.color || 'white'};
+    border-bottom: solid 2px ${({ color }) => color || 'white'};
     display: flex;
     text-align: center;
     font-size: 40px;
