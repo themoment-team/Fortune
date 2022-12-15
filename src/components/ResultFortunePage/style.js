@@ -17,7 +17,6 @@ export const Container = styled.div`
 export const BackgroundImg = styled.div`
   width: 600px;
   height: 600px;
-  position: relative;
   background-image: url(${fortuneResultImg});
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -35,16 +34,14 @@ export const ShowFortuneBox = styled.div`
   z-index: 99999999;
   position: absolute;
   top: 36%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   @media screen and (max-width: 720px) {
     width: 83vw;
     height: 50vw;
+    top: 300px;
   }
 `;
 
-export const dlwjddn = styled.button`
+export const CloseFortune = styled.button`
   width: 50px;
   height: 50px;
   background-color: white;
@@ -57,21 +54,19 @@ export const dlwjddn = styled.button`
   top: 7%;
   right: 5%;
   cursor: pointer;
+  @media screen and (max-width: 720px) {
+  }
 `;
 
 export const ReturnButton = styled.button`
   width: 250px;
   height: 93px;
   background-color: #e8ebf2;
-  position: absolute;
   z-index: 9999;
   font-family: "MaplestoryOTFBold";
-  bottom: 7%;
-
   border: none;
   font-size: 200%;
   color: #8f85ff;
-  left: 10%;
   cursor: pointer;
   transform: translateY(-7%);
   @media screen and (max-width: 720px) {
@@ -84,19 +79,27 @@ export const ShareButton = styled.button`
   width: 250px;
   height: 93px;
   background-color: #e8ebf2;
-  position: absolute;
   z-index: 9999;
   font-family: "MaplestoryOTFBold";
-  bottom: 7%;
   transform: translateY(-7%);
   border: none;
   font-size: 200%;
   color: #8f85ff;
-  right: 10%;
   cursor: pointer;
   @media screen and (max-width: 720px) {
     width: 34vw;
     height: 14vw;
     font-size: 5vw;
+  }
+`;
+
+export const WrapButton = styled.div`
+  width: 600px;
+  bottom: 10%;
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  @media screen and (max-width: 720px) {
+    width: 83vw;
   }
 `;

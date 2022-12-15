@@ -19,10 +19,10 @@ const ResultFortune = () => {
     setFortuneBox(false);
   };
 
-  const Modal = () => {
+  const ShowFortuneResult = () => {
     return (
       <S.ShowFortuneBox>
-        <S.dlwjddn onClick={hideFortuneBox}>X</S.dlwjddn>
+        <S.CloseFortune onClick={hideFortuneBox}>X</S.CloseFortune>
       </S.ShowFortuneBox>
     );
   };
@@ -30,11 +30,13 @@ const ResultFortune = () => {
   return (
     <div>
       <S.Container>
-        {fortuneBox && <Modal />}
-        {fortuneBox && (
-          <S.ReturnButton onClick={returnMainPage}>돌아가기</S.ReturnButton>
-        )}
-        {fortuneBox && <S.ShareButton>공유하기</S.ShareButton>}
+        {fortuneBox && <ShowFortuneResult />}
+        <S.WrapButton>
+          {fortuneBox && (
+            <S.ReturnButton onClick={returnMainPage}>돌아가기</S.ReturnButton>
+          )}
+          {fortuneBox && <S.ShareButton>공유하기</S.ShareButton>}
+        </S.WrapButton>
         <S.BackgroundImg
           onClick={() => {
             lookFortuneBox();
