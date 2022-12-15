@@ -1,48 +1,42 @@
 import styled from "styled-components";
+import fortune from "../../imgs/fortune.png";
 
 export const Container = styled.div`
-  position: absolute;
   height: 100vh;
+  width: 720px;
   display: flex;
-  justify-content: center;
   align-items: center;
   text-align: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  @media screen and (max-width: 720px) {
+    width: 100%;
+  }
 `;
 
-export const ClickFortuneImg = styled.img`
+export const FortuneImgBox = styled.div`
   width: 600px;
   height: 600px;
-  position: absolute;
-  @media screen and (max-width: 720px) {
-    width: 80vw;
-    height: 80vw;
-  }
-`;
-
-export const ClcikInsteadFortuneImg = styled.div`
-  width: 350px;
-  height: 350px;
-  position: absolute;
-  cursor: pointer;
-  @media screen and (max-width: 720px) {
-    width: 40vw;
-    height: 40vw;
-  } ;
-`;
-
-export const ClickText = styled.p`
-  text-align: center;
-  font-family: "MaplestoryOTFBold";
   position: relative;
-  font-weight: 900;
-  top: 10%;
-  font-size: 300%;
-  z-index: 99999;
-  cursor: pointer;
-  &:hover {
-    color: #fff;
-  }
+  background-image: url(${fortune});
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
   @media screen and (max-width: 720px) {
-    font-size: 5vw;
+    width: 100vw;
+    height: 100vw;
+  }
+`;
+
+export const TouchText = styled.p`
+  font-size: 300%;
+  cursor: pointer;
+  position: absolute;
+  top: 37%;
+  left: 50%;
+  margin: 0;
+  transform: translateX(-50%);
+  @media screen and (max-width: 720px) {
+    font-size: 15vw;
   }
 `;
