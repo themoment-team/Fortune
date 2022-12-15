@@ -20,6 +20,7 @@ export const BackgroundImg = styled.div`
   background-image: url(${fortuneResultImg});
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  cursor: pointer;
   @media screen and (max-width: 720px) {
     width: 83vw;
     height: 83vw;
@@ -95,7 +96,7 @@ export const ShareButton = styled.button`
 
 export const WrapButton = styled.div`
   width: 600px;
-  bottom: 10%;
+  bottom: 4%;
   display: flex;
   position: absolute;
   justify-content: space-between;
