@@ -50,7 +50,6 @@ export const CloseFortune = styled.button`
   color: #8f85ff;
   font-size: 200%;
   border: none;
-  font-family: "MaplestoryOTFBold";
   position: absolute;
   top: 7%;
   right: 5%;
@@ -64,7 +63,6 @@ export const ReturnButton = styled.button`
   height: 93px;
   background-color: #e8ebf2;
   z-index: 9999;
-  font-family: "MaplestoryOTFBold";
   border: none;
   font-size: 200%;
   color: #8f85ff;
@@ -81,7 +79,6 @@ export const ShareButton = styled.button`
   height: 93px;
   background-color: #e8ebf2;
   z-index: 9999;
-  font-family: "MaplestoryOTFBold";
   transform: translateY(-7%);
   border: none;
   font-size: 200%;

@@ -3,26 +3,23 @@ import fortune2 from "../../imgs/fortune2.png";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "../MainPage/Main";
+import { useNavigate } from "react-router-dom";
 
 const ResultFortune = () => {
   const [fortuneBox, setFortuneBox] = useState(false);
 
-  const lookFortuneBox = () => {
-    setFortuneBox(true);
-  };
-
-  const returnMainPage = () => {
-    window.location.href = "/";
-  };
-
-  const hideFortuneBox = () => {
-    setFortuneBox(false);
-  };
+  const navigate = useNavigate();
 
   const ShowFortuneResult = () => {
     return (
       <S.ShowFortuneBox>
-        <S.CloseFortune onClick={hideFortuneBox}>X</S.CloseFortune>
+        <S.CloseFortune
+          onClick={() => {
+            setFortuneBox(false);
+          }}
+        >
+          X
+        </S.CloseFortune>
       </S.ShowFortuneBox>
     );
   };
@@ -30,16 +27,20 @@ const ResultFortune = () => {
   return (
     <div>
       <S.Container>
-        {fortuneBox && <ShowFortuneResult />}
-        <S.WrapButton>
-          {fortuneBox && (
-            <S.ReturnButton onClick={returnMainPage}>돌아가기</S.ReturnButton>
-          )}
-          {fortuneBox && <S.ShareButton>공유하기</S.ShareButton>}
-        </S.WrapButton>
+        {fortuneBox && (
+          <>
+            <ShowFortuneResult />
+            <S.WrapButton>
+              <S.ReturnButton onClick={() => navigate("/")}>
+                돌아가기
+              </S.ReturnButton>
+              <S.ShareButton>공유하기</S.ShareButton>
+            </S.WrapButton>
+          </>
+        )}
         <S.BackgroundImg
           onClick={() => {
-            lookFortuneBox();
+            setFortuneBox(true);
           }}
         ></S.BackgroundImg>
       </S.Container>
