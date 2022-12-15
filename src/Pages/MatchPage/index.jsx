@@ -42,13 +42,9 @@ const Match = ({ history }) => {
             }
         } else {
             // 온전한 한글이 아닐때
-            if (target.classList[2] === FIRSTNAME) {
-                // 첫 번재 이름이 한글이 아닐때
-                setIsErr1(true);
-            } else if (target.classList[2] === 'secondName') {
-                // 두 번재 이름이 한글이 아닐때
-                setIsErr2(true);
-            }
+            target.classList[2] === FIRSTNAME
+                ? setIsErr1(true)
+                : setIsErr2(true);
         }
     };
 
