@@ -27,7 +27,6 @@ export const ViewNotFound = styled.h1`
     color: #8f85ff;
     font-weight: bold;
     margin: 0;
-    font-family: 'MaplestoryOTFBold';
     @media screen and (max-width: 800px) {
         font-size: 14vw;
     }

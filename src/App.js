@@ -1,14 +1,8 @@
-import React, { Component } from "react";
-import Main from "./components/MainPage/Main";
-import { Link } from "react-router-dom";
-import Loading from "./components/LoadingPage/Loading";
+import React, { Component, Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NotFound from "./components/NotFoundPage/NotFound";
-import Fortune from "./components/FortunePage";
-import Match from "./components/MatchPage/Match";
-import MatchResult from "./components/MatchResultPage/MatchResult";
-import ResultFortune from "./components/ResultFortunePage";
+import * as P from "./Pages";
 import * as S from "./style";
+import * as C from "./components";
 
 function App() {
   return (
@@ -17,13 +11,12 @@ function App() {
         <S.View>
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Main />}></Route>
-              <Route path="/fortune" element={<Fortune />}></Route>
-              <Route path="/fortune/result" element={<ResultFortune />}></Route>
-              <Route path="/match" element={<Match />}></Route>
-              <Route path="/match/result" element={<MatchResult />}></Route>
-              <Route path="*" element={<NotFound />}></Route>
-              <Route path="/loading" element={<Loading />}></Route>
+              <Route path="/" element={<P.Main />}></Route>
+              <Route path="/fortune" element={<P.Fortune />}></Route>
+              <Route path="/match" element={<P.Match />}></Route>
+              <Route path="/match/result" element={<P.MatchResult />}></Route>
+              <Route path="*" element={<P.NotFound />}></Route>
+              <Route path="/loading" element={<C.Loading />}></Route>
             </Routes>
           </BrowserRouter>
         </S.View>

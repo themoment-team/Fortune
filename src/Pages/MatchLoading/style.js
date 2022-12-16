@@ -8,12 +8,14 @@ export const Container = styled.div`
   text-align: center;
   justify-content: space-evenly;
   flex-direction: column;
+  @media screen and (max-width: 720px) {
+    width: 100vw;
+  }
 `;
 
 export const VioletText = styled.h1`
   position: relative;
   top: 15vh;
-  font-family: "MaplestoryOTFBold";
   font-size: 55px;
   color: #8f85ff;
   @media screen and (max-width: 700px) {
@@ -77,20 +79,9 @@ export const TextContainer = styled.div`
   justify-content: center;
   font-size: 50px;
   color: #969696;
-  font-family: "MaplestoryOTFBold";
   height: 100px;
   background: linear-gradient(to right, #e8ebf2, #f1f3f7);
   box-shadow: 15px 15px 15px rgba(17, 17, 17, 0.158);
   transition: ease-in-out 0.2s;
-  cursor: pointer;
-  @media screen and (max-width: 700px) {
-    width: 50vw;
-    font-size: 7vw;
-    height: 15vw;
-  }
-  &:hover {
-    color: #8f85ff;
-    transition: ease-in-out 0.2s;
-    scale: 1.05;
-  }
+  scale: 1.05;
 `;
