@@ -1,6 +1,6 @@
 import * as S from "./style";
-import Loading from "../LoadingPage/Loading";
-import { useState, useEffect } from "react";
+import { Loading } from "../../components";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Fortune = () => {
