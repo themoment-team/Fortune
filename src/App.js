@@ -17,6 +17,10 @@ function App() {
               <Route path="/match/result" element={<P.MatchResult />}></Route>
               <Route path="*" element={<P.NotFound />}></Route>
               <Route path="/loading" element={<C.Loading />}></Route>
+              <Route
+                path="/fortune/result"
+                element={<P.ResultFortunePage />}
+              ></Route>
             </Routes>
           </BrowserRouter>
         </S.View>
