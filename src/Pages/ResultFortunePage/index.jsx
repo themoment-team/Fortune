@@ -1,8 +1,5 @@
 import * as S from "./style";
-import fortune2 from "../../imgs/fortune2.png";
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Main from "../MainPage/Main";
 import { useNavigate } from "react-router-dom";
 
 const ResultFortune = () => {
