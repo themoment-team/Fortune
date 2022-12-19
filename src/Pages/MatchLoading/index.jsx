@@ -1,10 +1,10 @@
-import Loading from '../LoadingPage/Loading';
+import Loading from '../../components/Loading';
 import * as S from './style';
 
 const MatchLoading = () => {
     return (
         <div>
-            <Loading></Loading>
+            <Loading />
             <S.Container>
                 <S.VioletText>두 분의 이름을 입력해주세요</S.VioletText>
                 <S.NameContainer>

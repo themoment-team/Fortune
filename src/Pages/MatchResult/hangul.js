@@ -1,4 +1,5 @@
 const STROKES = {
+    // 한글의 획수를 담은 객체
     ㄱ: 1,
     ㄲ: 2,
     ㄴ: 1,
@@ -53,6 +54,7 @@ const STROKES = {
 };
 
 const counting = (name) => {
+    // 각 획수를 구해서 보내준다
     let cnt = [];
     for (let i = 0; i < name.length; i++) {
         let count = 0;
