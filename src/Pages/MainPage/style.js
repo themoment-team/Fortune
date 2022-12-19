@@ -1,9 +1,4 @@
 import styled from 'styled-components';
-<<<<<<< HEAD:src/components/MainPage/style.js
-=======
-import React from 'react';
-import { Link } from 'react-router-dom';
->>>>>>> develop:src/Pages/MainPage/style.js
 
 export const Container = styled.div`
     height: 100vh;
@@ -49,9 +44,6 @@ export const ContainerButton = styled.button`
     }
 `;
 
-<<<<<<< HEAD:src/components/MainPage/style.js
-
-
 // export const Box = () => {
 
 //     const changeColor = (e) => {
@@ -72,35 +64,3 @@ export const ContainerButton = styled.button`
 // }
 // export default Box;
 
-=======
-export const Box = () => {
-    const changeColor = (e) => {
-        console.log("It's working!!");
-        e.target.style.color = 'grey';
-        console.log(e.target);
-    };
-    return (
-        <ContainerButtonBox>
-            <Link to="/Fortune">
-                <ContainerButton
-                    onClick={(e) => {
-                        changeColor(e);
-                    }}
-                >
-                    운세뽑기
-                </ContainerButton>
-            </Link>
-            <Link to="/Match">
-                <ContainerButton
-                    onClick={(e) => {
-                        changeColor(e);
-                    }}
-                >
-                    궁합보기
-                </ContainerButton>
-            </Link>
-        </ContainerButtonBox>
-    );
-};
-export default Box;
->>>>>>> develop:src/Pages/MainPage/style.js
