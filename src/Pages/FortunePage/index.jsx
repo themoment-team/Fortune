@@ -1,16 +1,27 @@
 import * as S from "./style";
-import fortune from "../../imgs/fortune.png";
+import { Loading } from "../../components";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 const Fortune = () => {
+  const navigate = useNavigate();
+
   const [isClick, setIsClick] = useState(false);
+
+  const showLoading = () => {
+    setIsClick(true);
+    setTimeout(() => {
+      navigate("/fortune/result");
+    }, 3000);
+  };
 
   return (
     <div>
+      {isClick && <Loading serIsClick={setIsClick} />}
       <S.Container>
-        <S.ClickFortuneImg src={fortune} />
-        <S.ClcikInsteadFortuneImg>
-          <S.ClickText>touch!</S.ClickText>
-        </S.ClcikInsteadFortuneImg>
+        <S.FortuneImgBox>
+          <S.TouchText onClick={showLoading}>touch !</S.TouchText>
+        </S.FortuneImgBox>
       </S.Container>
     </div>
   );
