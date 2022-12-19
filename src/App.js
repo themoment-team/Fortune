@@ -11,16 +11,13 @@ function App() {
         <S.View>
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<P.Main />}></Route>
-              <Route path="/fortune" element={<P.Fortune />}></Route>
-              <Route path="/match" element={<P.Match />}></Route>
-              <Route path="/match/result" element={<P.MatchResult />}></Route>
-              <Route path="*" element={<P.NotFound />}></Route>
-              <Route path="/loading" element={<C.Loading />}></Route>
-              <Route
-                path="/fortune/result"
-                element={<P.ResultFortunePage />}
-              ></Route>
+              <Route path="/" element={<P.Main />} />
+              <Route path="/fortune" element={<P.Fortune />} />
+              <Route path="/match" element={<P.Match />} />
+              <Route path="/match/result" element={<P.MatchResult />} />
+              <Route path="*" element={<P.NotFound />} />
+              <Route path="/loading" element={<C.Loading />} />
+              <Route path="/fortune/result" element={<P.ResultFortunePage />} />
             </Routes>
           </BrowserRouter>
         </S.View>
