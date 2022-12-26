@@ -15,7 +15,7 @@ const MatchResult = () => {
     let name1 = [props.names[0][0], props.names[0][1], props.names[0][2]]; // 첫 번째 이름을 획마다 나눈것
     let name2 = [props.names[1][0], props.names[1][1], props.names[1][2]]; // 두 번째 이름을 획마다 나눈것
 
-    const [result, setResult] = useState(''); // 궁합 결과 설정
+    const [result, setResult] = useState('99'); // 궁합 결과 설정
 
     const getMatch = (userNames) => {
         // 궁합을 보는 로직이 있는 함수
@@ -36,22 +36,24 @@ const MatchResult = () => {
                 }
         }
         final = `${userNames[0]}${userNames[1]}`; // 문자열로 변환해서 저장
-        return final;
+        setResult(final);
+        const url = 'https://server.todaysfortune.site/compatibility/save';
+        getResult(url, final);
     };
 
-    const getResult = async (url, compatibility) => {
-        const random = Math.random() * 10;
+    const getResult = async (url, final) => {
+        const random = Math.random() * 100000000000;
         const userName1 = props.names[2];
         const userName2 = props.names[3];
         const data = {
             randomValue: random,
             name1: userName1,
             name2: userName2,
-            compatibility: compatibility,
+            compatibility: final,
         };
         console.log(data);
         try {
-            const res = await axios.post(url, data);
+            const res = await axios.get(url, data);
             console.log(res.data);
         } catch (err) {
             console.log(err);
@@ -60,7 +62,6 @@ const MatchResult = () => {
 
     useEffect(() => {
         setTimeout(() => setDelay(false), 3000); // 3초동안 로딩
-
         name1 = counting(name1); // 각 획수를 센다
         name2 = counting(name2); // 각 획수를 센다
         const userNames = [
@@ -71,10 +72,7 @@ const MatchResult = () => {
             name1[2],
             name2[2],
         ];
-        setResult(getMatch(userNames)); // 결과를 구한다
-        const url = 'https://server.todaysfortune.site/compatibility/save';
-        const compatibility = getMatch(userNames);
-        getResult(url, compatibility);
+        getMatch(userNames); // 결과를 구한다
     }, []);
 
     return (
