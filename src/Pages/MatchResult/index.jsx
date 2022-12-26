@@ -4,6 +4,7 @@ import heart from '../../imgs/heart.png';
 import { useState, useEffect } from 'react';
 import MatchLoading from '../MatchLoading';
 import { counting } from './hangul';
+import axios from 'axios';
 
 const MatchResult = () => {
     const [delay, setDelay] = useState(true); //로딩 화면 확인 변수
@@ -38,6 +39,25 @@ const MatchResult = () => {
         return final;
     };
 
+    const getResult = async (url) => {
+        const random = Math.random() * 10;
+        const userName1 = props.names[2];
+        const userName2 = props.names[3];
+        const data = {
+            randomValue: random,
+            name1: userName1,
+            name2: userName2,
+            compatibility: result,
+        };
+        console.log(data);
+        try {
+            const res = await axios.post(url, data);
+            console.log(res.data);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     useEffect(() => {
         setTimeout(() => setDelay(false), 3000); // 3초동안 로딩
 
@@ -52,6 +72,8 @@ const MatchResult = () => {
             name2[2],
         ];
         setResult(getMatch(userNames)); // 결과를 구한다
+        const url = 'https://server.todaysfortune.site/compatibility/save';
+        getResult(url);
     }, []);
 
     return (
