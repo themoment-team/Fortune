@@ -42,18 +42,22 @@ const MatchResult = () => {
     };
 
     const getResult = async (url, final) => {
-        const random = Math.random() * 100000000000;
+        const random = Math.random() * 100000000000000000;
         const userName1 = props.names[2];
         const userName2 = props.names[3];
         const data = {
-            randomValue: random,
+            compatibility: final,
             name1: userName1,
             name2: userName2,
-            compatibility: final,
+            randomValue: random,
         };
         console.log(data);
         try {
-            const res = await axios.get(url, data);
+            const res = await axios.get(url, {
+                params: {
+                    data,
+                },
+            });
             console.log(res.data);
         } catch (err) {
             console.log(err);
