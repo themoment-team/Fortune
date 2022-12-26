@@ -14,6 +14,10 @@ function App() {
                             <Route path="/fortune" element={<P.Fortune />} />
                             <Route path="/match" element={<P.Match />} />
                             <Route
+                                path="/match/result/:id"
+                                element={<P.SharedMatch />}
+                            ></Route>
+                            <Route
                                 path="/match/result"
                                 element={<P.MatchResult />}
                             />

@@ -15,6 +15,8 @@ const MatchResult = () => {
     let name1 = [props.names[0][0], props.names[0][1], props.names[0][2]]; // 첫 번째 이름을 획마다 나눈것
     let name2 = [props.names[1][0], props.names[1][1], props.names[1][2]]; // 두 번째 이름을 획마다 나눈것
 
+    const [random, setRandom] = useState(0);
+
     const [result, setResult] = useState('99'); // 궁합 결과 설정
 
     const getMatch = (userNames) => {
@@ -42,7 +44,7 @@ const MatchResult = () => {
     };
 
     const getResult = async (url, final) => {
-        const random = Math.random() * 100000000000000000;
+        setRandom(Math.random() * 100000000000000000);
         const userName1 = props.names[2];
         const userName2 = props.names[3];
         const data = {
@@ -75,6 +77,16 @@ const MatchResult = () => {
         getMatch(userNames); // 결과를 구한다
     }, []);
 
+    const handleCopy = (text) => {
+        try {
+            text = `https://todaysfortune.site/match/result/${text}`;
+            navigator.clipboard.writeText(text);
+            alert('클립보드에 링크가 복사되었습니다.');
+        } catch (e) {
+            alert('복사에 실패하였습니다');
+        }
+    };
+
     return (
         <div>
             {delay ? (
@@ -95,7 +107,13 @@ const MatchResult = () => {
                         >
                             <S.TextContainer>돌아가기</S.TextContainer>
                         </Link>
-                        <S.TextContainer>공유하기</S.TextContainer>
+                        <S.TextContainer
+                            onClick={() => {
+                                handleCopy(random);
+                            }}
+                        >
+                            공유하기
+                        </S.TextContainer>
                     </S.ButtonBox>
                 </S.Container>
             )}
