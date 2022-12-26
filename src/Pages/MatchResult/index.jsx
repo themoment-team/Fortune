@@ -15,7 +15,7 @@ const MatchResult = () => {
     let name1 = [props.names[0][0], props.names[0][1], props.names[0][2]]; // 첫 번째 이름을 획마다 나눈것
     let name2 = [props.names[1][0], props.names[1][1], props.names[1][2]]; // 두 번째 이름을 획마다 나눈것
 
-    const [result, setResult] = useState('100'); // 궁합 결과 설정
+    const [result, setResult] = useState(''); // 궁합 결과 설정
 
     const getMatch = (userNames) => {
         // 궁합을 보는 로직이 있는 함수
@@ -39,7 +39,7 @@ const MatchResult = () => {
         return final;
     };
 
-    const getResult = async (url) => {
+    const getResult = async (url, compatibility) => {
         const random = Math.random() * 10;
         const userName1 = props.names[2];
         const userName2 = props.names[3];
@@ -47,7 +47,7 @@ const MatchResult = () => {
             randomValue: random,
             name1: userName1,
             name2: userName2,
-            compatibility: result,
+            compatibility: compatibility,
         };
         console.log(data);
         try {
@@ -73,7 +73,8 @@ const MatchResult = () => {
         ];
         setResult(getMatch(userNames)); // 결과를 구한다
         const url = 'https://server.todaysfortune.site/compatibility/save';
-        getResult(url);
+        const compatibility = getMatch(userNames);
+        getResult(url, compatibility);
     }, []);
 
     return (
