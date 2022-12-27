@@ -6,6 +6,7 @@ import MatchLoading from '../MatchLoading';
 import { counting } from './hangul';
 import axios from 'axios';
 
+let random = 0;
 const MatchResult = () => {
     const [delay, setDelay] = useState(true); //로딩 화면 확인 변수
 
@@ -14,8 +15,6 @@ const MatchResult = () => {
 
     let name1 = [props.names[0][0], props.names[0][1], props.names[0][2]]; // 첫 번째 이름을 획마다 나눈것
     let name2 = [props.names[1][0], props.names[1][1], props.names[1][2]]; // 두 번째 이름을 획마다 나눈것
-
-    const [random, setRandom] = useState(0);
 
     const [result, setResult] = useState('99'); // 궁합 결과 설정
 
@@ -44,7 +43,7 @@ const MatchResult = () => {
     };
 
     const getResult = async (url, final) => {
-        setRandom(Math.random() * 100000000000000000);
+        random = Math.random() * 100000000000000000;
         const userName1 = props.names[2];
         const userName2 = props.names[3];
         const data = {
@@ -77,11 +76,22 @@ const MatchResult = () => {
         getMatch(userNames); // 결과를 구한다
     }, []);
 
-    const handleCopy = (text) => {
+    function isMobileYn() {
+        var filter = 'win16|win32|win64|mac|macintel';
+        if (navigator.platform) {
+            if (filter.indexOf(navigator.platform.toLowerCase()) < 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    const handleCopy = () => {
         try {
             const thisHref = window.location.href;
-            text = `${thisHref}/${text}`;
-            navigator.clipboard.writeText(text);
+            navigator.clipboard.writeText(`${thisHref}/${random}`);
             alert('클립보드에 링크가 복사되었습니다.');
         } catch (e) {
             alert('복사에 실패하였습니다');
@@ -110,7 +120,7 @@ const MatchResult = () => {
                         </Link>
                         <S.TextContainer
                             onClick={() => {
-                                handleCopy(random);
+                                handleCopy();
                             }}
                         >
                             공유하기
