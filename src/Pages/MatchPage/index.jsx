@@ -122,6 +122,8 @@ const Match = ({ history }) => {
                             onChange={checkName}
                             className="firstName"
                             type="text"
+                            name="select"
+                            onFocus={(e) => e.target.select()}
                         ></S.NameInput>
                         <S.ErrMessage>{isErr1 ? errMessage1 : ''}</S.ErrMessage>
                     </div>
@@ -131,8 +133,10 @@ const Match = ({ history }) => {
                             placeholder="이름"
                             color={isErr2 ? '#FF0000' : 'white'}
                             onChange={checkName}
-                            className="secondName"
                             type="text"
+                            className="secondName"
+                            name="select"
+                            onFocus={(e) => e.target.select()}
                         ></S.NameInput>
                         <S.ErrMessage>{isErr2 ? errMessage2 : ''}</S.ErrMessage>
                     </div>

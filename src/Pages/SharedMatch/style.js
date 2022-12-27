@@ -87,7 +87,7 @@ export const TextContainer = styled.div`
     cursor: pointer;
     @media screen and (max-width: 700px) {
         width: 50vw;
-        font-size: 7vw;
+        font-size: 5vw;
         height: 15vw;
         margin-bottom: 3vh;
     }
