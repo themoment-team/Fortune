@@ -79,7 +79,8 @@ const MatchResult = () => {
 
     const handleCopy = (text) => {
         try {
-            text = `https://todaysfortune.site/match/result/${text}`;
+            const thisHref = window.location.href;
+            text = `${thisHref}/${text}`;
             navigator.clipboard.writeText(text);
             alert('클립보드에 링크가 복사되었습니다.');
         } catch (e) {

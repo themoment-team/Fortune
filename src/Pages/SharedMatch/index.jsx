@@ -1,5 +1,4 @@
 import * as S from './style';
-import { useLocation, Link } from 'react-router-dom';
 import heart from '../../imgs/heart.png';
 import { useState, useEffect } from 'react';
 import MatchLoading from '../MatchLoading';
