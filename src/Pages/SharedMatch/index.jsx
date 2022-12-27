@@ -3,7 +3,7 @@ import heart from '../../imgs/heart.png';
 import { useState, useEffect } from 'react';
 import MatchLoading from '../MatchLoading';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const SharedMatch = () => {
     const [delay, setDelay] = useState(true); //로딩 화면 확인 변수
@@ -12,6 +12,7 @@ const SharedMatch = () => {
     const [name2, setName2] = useState('');
     const [result, setResult] = useState(0);
 
+    const navigate = useNavigate(); // 페이지 이동
     const params = useParams();
 
     const getResult = async (url) => {
@@ -47,7 +48,9 @@ const SharedMatch = () => {
                         <S.RelativeText>{result}%</S.RelativeText>
                         <S.ViewPicture src={heart} />
                     </S.HeartDiv>
-                    <S.ButtonBox></S.ButtonBox>
+                    <S.TextContainer onClick={() => navigate('/match', {})}>
+                        나도 해보자!
+                    </S.TextContainer>
                 </S.Container>
             )}
         </div>
