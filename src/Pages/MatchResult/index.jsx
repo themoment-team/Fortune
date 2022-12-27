@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import MatchLoading from '../MatchLoading';
 import { counting } from './hangul';
 import axios from 'axios';
+import { CopyToClipboard } from 'react-copy-to-clipboard/src';
 
 let random = 0;
 const MatchResult = () => {
@@ -88,16 +89,6 @@ const MatchResult = () => {
         return false;
     }
 
-    const handleCopy = () => {
-        try {
-            const thisHref = window.location.href;
-            navigator.clipboard.writeText(`${thisHref}/${random}`);
-            alert('클립보드에 링크가 복사되었습니다.');
-        } catch (e) {
-            alert('복사에 실패하였습니다');
-        }
-    };
-
     return (
         <div>
             {delay ? (
@@ -118,12 +109,15 @@ const MatchResult = () => {
                         >
                             <S.TextContainer>돌아가기</S.TextContainer>
                         </Link>
-                        <S.TextContainer
-                            onClick={() => {
-                                handleCopy();
-                            }}
-                        >
-                            공유하기
+                        <S.TextContainer>
+                            <CopyToClipboard
+                                text={`https://todaysfortune.site/match/result/${random}`}
+                                onCopy={() =>
+                                    alert('클립보드에 링크가 복사되었습니다.')
+                                }
+                            >
+                                <p>공유하기</p>
+                            </CopyToClipboard>
                         </S.TextContainer>
                     </S.ButtonBox>
                 </S.Container>
