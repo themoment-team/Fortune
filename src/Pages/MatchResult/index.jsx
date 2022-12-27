@@ -53,10 +53,8 @@ const MatchResult = () => {
             name2: userName2,
             randomValue: random,
         };
-        console.log(data);
         try {
             const res = await axios.post(url, data);
-            console.log(res);
         } catch (err) {
             console.log(err);
         }
