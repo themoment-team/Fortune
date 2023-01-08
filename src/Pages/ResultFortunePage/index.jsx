@@ -77,7 +77,7 @@ const ResultFortune = () => {
                 돌아가기
               </S.ReturnButton>
               <CopyToClipboard
-                text={`http://localhost:3000/fortune/result/${fortuneId}`}
+                text={`https://server.todaysfortune.site/fortune/result/${fortuneId}`}
                 onCopy={() => alert("클립보드에 링크가 복사되었습니다.")}
               >
                 <S.ShareButton>공유하기</S.ShareButton>
