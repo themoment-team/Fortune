@@ -38,7 +38,7 @@ const SharedFortune = () => {
   };
   useEffect(() => {
     console.log(params.id);
-    const url = `https://server.todaysfortune.site/fortune/info/${params.id}`;
+    const url = `https://port-0-fortune-back-e9btb72blgnmoq2j.sel3.cloudtype.app/fortune/info/${params.id}`;
     getResult(url);
   }, []);
 

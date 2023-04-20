@@ -39,7 +39,8 @@ const MatchResult = () => {
     }
     final = `${userNames[0]}${userNames[1]}`; // 문자열로 변환해서 저장
     setResult(final);
-    const url = "https://server.todaysfortune.site/compatibility/save";
+    const url =
+      "https://port-0-fortune-back-e9btb72blgnmoq2j.sel3.cloudtype.app/compatibility/save";
     getResult(url, final);
   };
 

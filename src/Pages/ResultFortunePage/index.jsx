@@ -13,7 +13,7 @@ const ResultFortune = () => {
 
   const getFortune = async () => {
     const { data } = await axios({
-      url: "https://server.todaysfortune.site/fortuneData/randomFortune",
+      url: "https://port-0-fortune-back-e9btb72blgnmoq2j.sel3.cloudtype.app/fortuneData/randomFortune",
       method: "get",
     });
     console.log(data);
@@ -25,7 +25,7 @@ const ResultFortune = () => {
 
   const saveFortune = async () => {
     await axios({
-      url: "https://server.todaysfortune.site/fortune/save",
+      url: "https://port-0-fortune-back-e9btb72blgnmoq2j.sel3.cloudtype.app/fortune/save",
       method: "post",
       data: fortuneInfo,
     });
@@ -33,7 +33,7 @@ const ResultFortune = () => {
   };
   const shareFortune = async () => {
     const { data } = await axios({
-      url: `https://server.todaysfortune.site/fortune/info/${fortuneId}`,
+      url: `https://port-0-fortune-back-e9btb72blgnmoq2j.sel3.cloudtype.app/fortune/info/${fortuneId}`,
       method: "post",
     });
     console.log("하이", data);
@@ -77,7 +77,7 @@ const ResultFortune = () => {
                 돌아가기
               </S.ReturnButton>
               <CopyToClipboard
-                text={`https://server.todaysfortune.site/fortune/result/${fortuneId}`}
+                text={`https://port-0-fortune-back-e9btb72blgnmoq2j.sel3.cloudtype.app/fortune/result/${fortuneId}`}
                 onCopy={() => alert("클립보드에 링크가 복사되었습니다.")}
               >
                 <S.ShareButton>공유하기</S.ShareButton>
